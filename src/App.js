@@ -1,13 +1,23 @@
-import React from 'react';
-
+import React, {useState}from 'react';
+import Header from './components/Header/Header';
+import Cart from './components/Cart';
+import AvailableProducts from './components/Products'
 import './App.css';
-import AvailableProducts from './components/Products';
 
 function App() {
+  const [cart, setCart] = useState(false);
+  const hideCartHandler = () => {
+    setCart(false);
+  };
+  const showCartHandler = () => {
+    setCart(true);
+  };
   return (
     
         <div>
+           <Header cart={showCartHandler}/>
          <AvailableProducts />
+         {cart && <Cart onClick={hideCartHandler} />}
         </div>
         
   );

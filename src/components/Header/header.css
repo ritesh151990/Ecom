@@ -1,0 +1,37 @@
+.up{
+    margin: auto;
+    background-color: black;
+    text-align: center;
+}
+.h3{
+    margin:0;
+}
+.down{
+    background-color: grey;
+    text-align: center;
+    height: 25vh;
+}
+
+.a{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+   
+}
+
+.butt{
+    position: absolute;
+    right: 20px;
+    border-color: rgba(0, 153, 255, 0.616);
+    color: white;
+    background-color: grey;
+}
+
+.h1{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 5rem;
+    padding: 50px;
+}
