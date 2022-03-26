@@ -15,7 +15,7 @@ function App() {
   return (
     
         <div>
-           <Header cart={showCartHandler}/>
+           <Header Cart={showCartHandler}/>
          <AvailableProducts />
          {cart && <Cart onClick={hideCartHandler} />}
         </div>
