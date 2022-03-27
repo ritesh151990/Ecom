@@ -22,7 +22,16 @@ const CartProvider =(props) =>{
     
         }
     const removeItemFromCartHandler=(id) =>{
-        
+        const newItemArray=[ ...items];
+        newItemArray.forEach((index) => {
+        if(id===index.id){
+            newItemArray.splice(index,1);
+        }
+       
+
+
+        })
+        updateItems(newItemArray)
     };
     
     const cartContext ={

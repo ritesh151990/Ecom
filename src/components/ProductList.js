@@ -25,13 +25,14 @@ const ProductList = (props) => {
     return (
         <Fragment>
             <ul className="products">
-                <div>Title: {props.title}</div>
+                <div><h4>Title: {props.title}</h4></div>
                 <div>
                     <img src={imgsrc} alt="products" />
                 </div>
-                <div>Rs.{props.price} </div>
+                <span> </span>
+                <div><h4>Rs.{props.price} </h4><button className="add" onClick={addToCart} >Add To Cart</button></div>
                 
-                <button className="add" onClick={addToCart} >Add To Cart</button>
+                
             </ul>
         </Fragment>
     );

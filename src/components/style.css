@@ -5,10 +5,10 @@
     justify-content: space-evenly;
 }
 .products{
-    width: 30%;
-    padding: 10px;
-    margin: 10px;
+    width: 35%;
+    padding: 15px;
+    margin: 12px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+  
 }

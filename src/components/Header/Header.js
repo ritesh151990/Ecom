@@ -1,4 +1,5 @@
 import React, { Fragment,useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import CartContext from '../CartContext';
 
 import './header.css';
@@ -7,7 +8,7 @@ const Header = (props) => {
   let total=0;
   const cartCntxt = useContext(CartContext);
      cartCntxt.items.forEach(element => {
-       total+=element.quantity;
+       total+=element.quantity
        
      });;
       console.log(total)
@@ -16,15 +17,15 @@ const Header = (props) => {
     <Fragment>
       <div className="up">
         <h3 className="h3">
-          <a className="a" href=" ">
+          <NavLink className="a" to="/home">
             HOME
-          </a>
-          <a className="a" href=" ">
+          </NavLink>
+          <NavLink className="a" to="/store">
             STORE
-          </a>
-          <a className="a" href=" ">
+          </NavLink>
+          <NavLink className="a" to="/about">
             ABOUT
-          </a>
+          </NavLink>
           <button className="butt" onClick={props.Cart}>Cart({total})</button>
         </h3>
       </div>

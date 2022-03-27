@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './CartItem.css';
-
+import CartContext
+ from './CartContext';
 const CartItems = (props) => {
-    const imgsrc = props.img;
+  // let totalAmount=0;
+  const cartCntxt = useContext(CartContext);
+ 
+  const removeFromCart=(event)=>
+  {
+    event.preventDefault();
+    cartCntxt.removeItem(props.id)
+  }
+  // cartCntxt.items.forEach=(item)=>{
+  // totalAmount=totalAmount+(item.price*item.quantity)
+  // }
+   
+ const imgsrc = props.img;
   return (
     <div className="container">
       <div className="row">
@@ -17,9 +30,10 @@ const CartItems = (props) => {
           <span>{props.quantity}</span>
         </div>
         <div className="col">
-        <button className='btn btn-danger remove'>Remove</button>
+        <button className='btn btn-danger remove' onClick={removeFromCart}>Remove</button>
         </div>
       </div>
+      
       
     </div>
   );

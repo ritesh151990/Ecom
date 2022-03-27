@@ -1,5 +1,5 @@
 .cart{
-    background-color: white;
+    background-color: cornsilk;
     width: 30vw;
     height: auto;
     position: absolute;
@@ -20,4 +20,10 @@
 .X{
     position: absolute;
     right: 20px;
+}
+
+.Total{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.50rem;
+    text-align: end;
 }
