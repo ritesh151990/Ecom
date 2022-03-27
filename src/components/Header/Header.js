@@ -1,9 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment,useContext } from 'react';
+import CartContext from '../CartContext';
 
 import './header.css';
 
 const Header = (props) => {
-
+  let total=0;
+  const cartCntxt = useContext(CartContext);
+     cartCntxt.items.forEach(element => {
+       total+=element.quantity;
+       
+     });;
+      console.log(total)
+    
   return (
     <Fragment>
       <div className="up">
@@ -17,7 +25,7 @@ const Header = (props) => {
           <a className="a" href=" ">
             ABOUT
           </a>
-          <button className="butt" onClick={props.Cart}>Cart</button>
+          <button className="butt" onClick={props.Cart}>Cart({total})</button>
         </h3>
       </div>
       <div className="down">

@@ -1,37 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Cart.css';
+import CartContext from './CartContext';
 import CartItems from './CartItems';
 
-const cartElements = [
-    {
-      title: "Colors",
-      price: 100,
-      imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-      quantity: 2,
-    },
   
-    {
-      title: "Black and white Colors",
-      price: 50,
-      imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-      quantity: 3,
-    },
-  
-    {
-      title: "Yellow and Black Colors",
-      price: 70,
-      imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-      quantity: 1,
-    },
-  ];
-  
-  
+
+
   
   const Cart = (props) => {
-      const cartList = cartElements.map((list) => 
+    const cartCntxt = useContext(CartContext);
+     console.log(cartCntxt.items);
+      const cartList = cartCntxt.items.map((list) => 
+     
       <CartItems
+          key={list.id}
           item={list.title} img={list.imageUrl} 
-      price={list.price} amount={list.quantity}/>
+          
+      price={list.price}  quantity={list.quantity}/>
       );
       return (
        
@@ -52,6 +37,9 @@ const cartElements = [
                 </div>
                 <div className="col">
                   <span>Amount</span>
+                </div>
+                <div className="col">
+                  Remove
                 </div>
               </div>
             </div>
