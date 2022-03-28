@@ -1,4 +1,4 @@
-* {
+/* * {
     font-family: "Metal Mania";
   }
   
@@ -27,13 +27,13 @@
     width: 27%;
   
     height: 38px;
-  }
+  } */
   section {
     margin: 1rem auto;
     width: 90%;
     max-width: 40rem;
     text-align: center;
-    background-color: white;
+    background-color: orangered;
     padding: 2rem;
     border-radius: 12px;
   }
