@@ -1,6 +1,7 @@
 import React,{useState,useEffect,useCallback} from "react";
 import "./HomePage.css";
-import MoviesList from "./movies/MoviesList"
+import MoviesList from "./movies/MoviesList";
+import AddMovie from "./movies/AddMovie"
 
 const HomePage = () => {
   const[movies,setMovies]=useState([]);
@@ -37,9 +38,15 @@ const HomePage = () => {
     }
     setIsloading(false);
   },[]);
+
+
   useEffect(()=>{
     fetchMovieshandler();
     },[fetchMovieshandler])
+
+    function addMovieHandler(movie) {
+      console.log(movie);
+    }
 
  let content=<p>Found no movies</p>
  if(movies.length>0){
@@ -55,6 +62,9 @@ const HomePage = () => {
   
   return (
         <React.Fragment>
+          <section>
+        <AddMovie onAddMovie={addMovieHandler} />
+      </section>
         <section>
           <button onClick={fetchMovieshandler}>Fetch Movies</button>
         </section>
