@@ -5,25 +5,29 @@ const ContactUS = () => {
     const mailRef = useRef("");
     const phnoRef = useRef("");
 
-    const contacts = {
-      name: nameRef.current.value,
-      email: mailRef.current.value,
-      phno: phnoRef.current.value,
-    };
-    const submitHandler=async()=> {
+    // const contacts = {
+    //   name: nameRef.current.value,
+    //   email: mailRef.current.value,
+    //   phno: phnoRef.current.value,
+    // };
+    const submitHandler=async(event)=> {
+      event.preventDefault();
+      const contacts = {
+        name: nameRef.current.value,
+        email: mailRef.current.value,
+        phno: phnoRef.current.value,
+      };
       
-        const response = await fetch(
-          "https://contacts-54961-default-rtdb.firebaseio.com/contacts.json",
+        const response = await fetch('https://react-http-9484f-default-rtdb.firebaseio.com/contacts.json',
           {
             method: "POST",
             body: JSON.stringify(contacts),
             headers: {
               "Content-Type": "application/json",
             },
-          }
-        );
+          });
         const data = await response.json();
-        console.log(data.name);
+        console.log(data);
       }
   
       
