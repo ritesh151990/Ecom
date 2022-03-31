@@ -59,11 +59,22 @@ const HomePage = () => {
       const data= await response.json();
       console.log(data);
     }
+    const deleteHandler = async (id) => {
+      console.log('id = ',id);
+      await fetch(`https://react-http-9484f-default-rtdb.firebaseio.com/movies/${id}.json`, {
+        method: 'DELETE',
+        body: JSON.stringify(id),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      setMovies(movies.filter((movie) => movie.id !== id));
+    }
 
  let content=<p>Found no movies.</p>
 
  if(movies.length>0){
- content=<MoviesList movies={movies} />
+ content=<MoviesList movies={movies} onDelete = {deleteHandler} />
  }
 
  if(error){

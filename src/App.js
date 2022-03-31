@@ -7,6 +7,7 @@ import './App.css';
 import CartProvider from './components/CartProvider';
 import About from './About';
 import HomePage from './components/HomePage';
+import ContactUS from './components/movies/ContactUs';
 
 function App() {
   
@@ -20,7 +21,7 @@ function App() {
   };
   return (
     
-    
+            
            <CartProvider>
            <Header Cart={showCartHandler} />
            <Route path="/home">
@@ -28,6 +29,9 @@ function App() {
          </Route>
          <Route path="/About">
          <About />
+         </Route>
+         <Route path="/contactus">
+         <ContactUS />
          </Route>
          <Route path="/store" >
          <AvailableProducts />
