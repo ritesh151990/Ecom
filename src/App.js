@@ -39,20 +39,21 @@ const authCtx=useContext(AuthContext)
            <Switch>
             
             
-           <Route path="/home">
+           {authCtx.isLoggedIn &&(  <Route path="/home">
            <HomePage />
-         </Route>
+         </Route>)}
          <Route path="/About">
          <About />
          </Route>
          <Route path="/contactus">
          <ContactUS />
          </Route>
+         {authCtx.isLoggedIn &&( 
          <Route path="/store" exact >
          <Header Cart={showCartHandler} />
          {cart && <Cart onClick={hideCartHandler} />}
          <AvailableProducts />
-         </Route>
+         </Route>)}
          
          <Route path="/store/:productId"> 
          <ProductDetail />
