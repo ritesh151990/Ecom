@@ -1,4 +1,5 @@
 import React from "react";
+
 import ProductList from "./ProductList";
 import './style.css';
 
@@ -47,12 +48,21 @@ const productsArr = [
     price: 100,
     
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
-    quantity: 1,
-    }
+   
+    },
+    {
+        id: "5",
+        title: "T-shirt",
+        price: 120,
+        image: "https://prasadyash2411.github.io/ecom-website/img/Shirt.png",
+         quantity: 1,
+      }
     
     ]
     const AvailableProducts=()=>{
         const productsList=productsArr.map(product=>(
+        
+          
             
             <ProductList
             
@@ -63,6 +73,7 @@ const productsArr = [
                price={product.price} 
                quantity={product.quantity}/>
             ));
+            
     
         return(
             

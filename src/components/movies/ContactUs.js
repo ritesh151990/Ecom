@@ -35,8 +35,9 @@ const ContactUS = () => {
   
     return (
       <Fragment  >
-        <div className="d-flex justify-content-center about">ContactUs</div>
+        <div className="d-flex justify-content-left about"><h1>Contact Us</h1></div>
       <form onSubmit={submitHandler}>
+         
          <label htmlFor="name">NAME</label>
         <input type="text" ref={nameRef} />
         <label htmlFor="e-mail">E-MAIL</label>

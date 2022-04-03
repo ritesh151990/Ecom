@@ -1,4 +1,7 @@
  import React,{ Fragment, useContext } from "react";
+import { Link } from "react-router-dom";
+
+
 import CartContext from "./CartContext";
  import './style.css';
 const ProductList = (props) => {
@@ -24,7 +27,11 @@ const ProductList = (props) => {
     const imgsrc = props.img;
     return (
         <Fragment>
+            
             <ul className="products">
+                
+            <Link to={`store/${props.id}`}>
+                
                 <div><h4>Title: {props.title}</h4></div>
                 <div>
                     <img src={imgsrc} alt="products" />
@@ -32,8 +39,9 @@ const ProductList = (props) => {
                 <span> </span>
                 <div><h4>Rs.{props.price} </h4><button className="add" onClick={addToCart} >Add To Cart</button></div>
                 
-                
+                </Link>
             </ul>
+            
         </Fragment>
     );
 };
