@@ -2,21 +2,26 @@ import React, { useContext } from 'react';
 import './Cart.css';
 import CartContext from './CartContext';
 import CartItems from './CartItems';
+import AuthContext from './Header/auth-context';
 
   
 
 
   
   const Cart = (props) => {
+    const emailCntxt=useContext(AuthContext)
+    const email=emailCntxt.email;
+    console.log(email);
     let cartTotal=0;
     const cartCntxt = useContext(CartContext);
+   
      
       const cartList = cartCntxt.items.map((list) => 
      
       <CartItems
           key={list.id}
           id={list.id}
-          item={list.title} img={list.imageUrl} 
+          item={list.title} img={list.imgsrc} 
           
       price={list.price}  quantity={list.quantity}/>
       );
@@ -30,7 +35,7 @@ import CartItems from './CartItems';
        
           <div className="cart">
             <h3 className="cartName">
-              Cart
+              Cart {email}
               <button className="btn btn-primary X" onClick={props.onClick}>
                 X
               </button>
@@ -47,14 +52,15 @@ import CartItems from './CartItems';
                   <span>Amount</span>
                 </div>
                 <div className="col">
-                  Remove
+                  Total
                 </div>
               </div>
             </div>
             {cartList}
             
              
-               <div className="Total">Total={cartTotal}</div>
+               <div className="Total">Order Total={cartTotal}</div>
+               <button >Place Order</button>
                  
           </div>
           

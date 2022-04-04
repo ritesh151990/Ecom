@@ -16,6 +16,7 @@ const CartItems = (props) => {
   // }
    
  const imgsrc = props.img;
+ const itemTotal=props.price*props.quantity
   return (
     <div className="container">
       <div className="row">
@@ -30,6 +31,7 @@ const CartItems = (props) => {
           <span>{props.quantity}</span>
         </div>
         <div className="col">
+          <span>{itemTotal}</span>
         <button className='btn btn-danger remove' onClick={removeFromCart}>Remove</button>
         </div>
       </div>

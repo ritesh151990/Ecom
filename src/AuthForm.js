@@ -60,8 +60,9 @@ url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBlwBxLf
     });
   }
   }).then(data => {
-  authCtx.login(data.idToken);
-  history.replace('/');
+    
+  authCtx.login(data.idToken,data.email);
+  history.replace('/store');
   })
   .catch((err) =>{
     alert(err.message);
