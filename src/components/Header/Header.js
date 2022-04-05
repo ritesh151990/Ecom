@@ -11,8 +11,7 @@ const Header = (props) => {
        total+=element.quantity
        
      });;
-      console.log(total)
-    
+     
   return (
     <Fragment>
     

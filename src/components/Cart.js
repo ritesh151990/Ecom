@@ -2,16 +2,15 @@ import React, { useContext } from 'react';
 import './Cart.css';
 import CartContext from './CartContext';
 import CartItems from './CartItems';
-import AuthContext from './Header/auth-context';
+
 
   
 
 
   
   const Cart = (props) => {
-    const emailCntxt=useContext(AuthContext)
-    const email=emailCntxt.email;
-    console.log(email);
+    
+    
     let cartTotal=0;
     const cartCntxt = useContext(CartContext);
    
@@ -35,7 +34,7 @@ import AuthContext from './Header/auth-context';
        
           <div className="cart">
             <h3 className="cartName">
-              Cart {email}
+              Cart 
               <button className="btn btn-primary X" onClick={props.onClick}>
                 X
               </button>
@@ -60,7 +59,7 @@ import AuthContext from './Header/auth-context';
             
              
                <div className="Total">Order Total={cartTotal}</div>
-               <button >Place Order</button>
+               {/* <button >Place Order</button> */}
                  
           </div>
           

@@ -19,11 +19,13 @@ export const AuthContextProvider=(props)=>{
      setToken(token);
      setEmail(email);
      localStorage.setItem('token',token);
+     localStorage.setItem('Email',email)
  }
  const logoutHandler =()=>{
      setToken(null);
      setEmail(null);
      localStorage.removeItem('token')
+     localStorage.removeItem('Email')
 }
 
 const contextValue={

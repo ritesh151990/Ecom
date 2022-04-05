@@ -3,7 +3,7 @@ import './CartItem.css';
 import CartContext
  from './CartContext';
 const CartItems = (props) => {
-  // let totalAmount=0;
+ 
   const cartCntxt = useContext(CartContext);
  
   const removeFromCart=(event)=>
@@ -11,9 +11,7 @@ const CartItems = (props) => {
     event.preventDefault();
     cartCntxt.removeItem(props.id)
   }
-  // cartCntxt.items.forEach=(item)=>{
-  // totalAmount=totalAmount+(item.price*item.quantity)
-  // }
+ 
    
  const imgsrc = props.img;
  const itemTotal=props.price*props.quantity

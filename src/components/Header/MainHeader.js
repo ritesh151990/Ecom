@@ -1,13 +1,24 @@
+import axios from 'axios';
 import React, { Fragment, useContext } from 'react'
 import { NavLink } from 'react-router-dom';
+import CartContext from '../CartContext';
 import AuthContext from './auth-context';
 
 const MainHeader=() =>{
   const authCtx= useContext(AuthContext)
+  const cartCtx= useContext(CartContext)
+  const email=localStorage.getItem('Email');
+
   const isLoggedIn =authCtx.isLoggedIn;
-  const logoutHandler=()=>{
+  const logoutHandler=async()=>{
       authCtx.logout();
-  }
+      const cart=JSON.stringify(cartCtx.items)
+      
+       await axios.post(`https://crudcrud.com/api/fa6fbd63890a437a8a91cc3fd16f4378/cart${email}`,
+       cart)
+      
+      }
+    
 
 
   return (
